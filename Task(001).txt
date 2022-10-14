@@ -1,0 +1,111 @@
+1. Write a blog on Difference between HTTP1.1 vs HTTP2
+
+HTTP/1.1
+Year : 1997
+Key Features : It supports connection reuse i.e. for every TCP connection there could be multiple requests and responses, and pipelining where the client can request several resources from the server at once. However, pipelining was hard to implement due to issues such as head-of-line blocking and was not a feasible solution.
+Status Code :  Introduces a warning header field to carry additional information about the status of a message. Can define 24 status codes, error reporting is quicker and more efficient.
+Authentication Mechanism : It is relatively secure since it uses digest authentication, NTLM authentication.
+Caching : Expands on the caching support by using additional headers like cache-control, conditional headers like If-Match and by using entity tags.
+Web Traffic : HTTP/1.1 provides faster delivery of web pages and reduces web traffic as compared to HTTP/1.0. However, TCP starts slowly and with domain sharding (resources can be downloaded simultaneously by using multiple domains), connection reuse and pipelining, there is an increased risk of network congestion.
+
+HTTP/2
+Year : 2015
+Key Features : Uses multiplexing, where over a single TCP connection resources to be delivered are interleaved and arrive at the client almost at the same time. It is done using streams which can be prioritized, can have dependencies and individual flow control. It also provides a feature called server push that allows the server to send data that the client will need but has not yet requested.
+Status Code : Underlying semantics of HTTP such as headers, status codes remains the same.
+Authentication Mechanism  : Security concerns from previous versions will continue to be seen in HTTP/2. However, it is better equipped to deal with them due to new TLS features like connection error of type Inadequate_Security.
+Caching : HTTP/2 does not change much in terms of caching. With the server push feature if the client finds the resources are already present in the cache, it can cancel the pushed stream.
+Web Traffic : HTTP/2 utilizes multiplexing and server push to effectively reduce the page load time by a greater margin along with being less sensitive to network delays.
+
+
+2. Write a blog about objects and its internal representation in Javascript
+
+Objects are important data types in java script. Objects are quite different from primitive data types like numbers, String, Boolean, null, undefined, symbol. Primitive data types can hold only one value but objects can hold multiple data types in key value pair formats.
+Objects are most complex data types each object may contain the combination of primitive data types as well as referenced data types.
+Objects are referenced data types. Variables that are assigned a referenced value is given to the referencer or a pointer to that address. That referencer or pointer points to that location in memory whrere the object is stored. 
+An object does not store the value it works as for every given value a referenced value is given and it points to the address of that memory location.
+Objects in Java Script may be defined as an unordered collection of related data of primitive and reference data types in the form of key value pairs. These keys can be variables or methods and are called properties and methods respectively in context of object.
+
+Creating Objects in Java Script
+
+By Using Object Literal
+
+object={property1:value1, property2:value2, property3:value3, ...........propertyN:valueN}
+
+Example
+
+var emp={
+name:"saiteja"
+code:1456
+isregistered:yes
+};
+
+By Creating Instance of Object directly(Using new keyword):
+
+var objectname=new Object();
+
+Example:
+var emp = new Object();
+emp.name="saiteja"
+emp.code=1456;
+emp.isregistered=yes;
+
+By  Creating Object with Constructor
+
+function Vehicle(name, maker) {
+   this.name = name;
+   this.maker = maker;
+}
+let car1 = new Vehicle(’Fiesta’, 'Ford’);
+let car2 = new Vehicle(’Santa Fe’, 'Hyundai’)
+console.log(car1.name);    //Output: Fiesta
+console.log(car2.name);    //Output: Santa Fe
+
+Accessing the Objects
+
+The syntax for accessing the property of object is using objectName.property, objectName[property]
+
+Example: 
+
+Using dot operator
+emp.name
+
+Using []
+emp["name"]
+
+Points to Be Remembered
+Unassigned properties of objects are undefined but not null
+Objects are some times called as assosiative arrays because each property of a string is assosiated with the string value that can be used to access it.(In the above example we can access the employee properties like name, code, isregistered with a single object).
+An object property name can be any valid Java Script object or anything that can be converted into string like spaces between strings, empty string etc.
+myObj.type                   = 'Dot syntax';
+myObj['date created']   = 'String with space';
+myObj[str]                    = 'String value';
+myObj[rand]                 = 'Random Number';
+myObj[obj]                   = 'Object';
+myObj['']                       = 'Even an empty string';console.log(myObj);
+We can access properties using a string value that is stored in a variable.
+var propertyName = 'make';
+myCar[propertyName] = 'Ford';propertyName = 'model';
+myCar[propertyName] = 'Mustang';
+
+Iterating the objects Using For In Loop:
+
+function showProps(obj, objName) {
+  var result = ``;
+  for (var i in obj) {
+    // obj.hasOwnProperty() is used to filter out properties from the object's prototype chain
+    if (obj.hasOwnProperty(i)) {
+      result += `${objName}.${i} = ${obj[i]}\n`;
+    }
+  }
+  return result;
+}
+
+Working
+
+The function call showProps(emp, "myCar") would return the following:
+
+emp.name returns"saiteja"
+emp.code returns1456;
+emp.isregistered returns yes;
+
+3. codekata practice
