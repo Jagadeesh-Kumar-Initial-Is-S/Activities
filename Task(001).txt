@@ -109,3 +109,6 @@ emp.code returns1456;
 emp.isregistered returns yes;
 
 3. codekata practice
+
+I solved or completed 10 questions in Input/Output.
+I solved or completed 30 questions in Obsolute Beginner.
