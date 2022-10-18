@@ -1,0 +1,120 @@
+//Submitted by Jagadeesh Kumar . S
+
+1. For the given JSON iterate over all  for loops (for, for in, forEach)
+
+=>for loop: 
+var mark=[80,95,98,78,75];
+for(var i=0;i<5;i++){
+console.log(mark[i]);
+}
+
+=>for in loop:
+var bike = \{"name":"royal enfield","model":2020\}
+for(var i in bike){
+console.log(i,bike[i]);
+}
+
+=>for of loop:
+var exammark=[20,40,60,80,90];
+for(var i of exammark){
+console.log(i);
+}
+
+=>for each loop:
+var test=[11,22,33,44,55,66,77,88,99];
+test.foreach(function(value,index){
+console.log(value,index);
+})
+
+}
+
+2. Create your own  resume data in json format
+
+
+{
+    "basics": {
+      "name": "",
+      "age": "",
+      "email": "",
+      "phone": "",
+      "degree": "",
+      "location": {
+        "address": "",
+        "postalCode": "",
+        "city": "",
+        "countryCode": "",
+        "region": ""
+      },
+      "profiles": [
+        {
+          "network": "",
+          "username": "",
+          "url": ""
+        }
+      ]
+    },
+    "education": [
+      {
+        "institution": "",
+        "area": "",
+        "department": "",
+        "startDate": "",
+        "endDate": "",
+        "gpa": "",
+        "courses": [
+          ""
+        ]
+      }
+    ],
+       "skills": [
+      {
+        "name": "",
+        "level": "",
+      }
+    ],
+    "languages": [
+      {
+        "language": "",
+        "fluency": ""
+      }
+    ],
+    "interests": [
+      {
+        "name": "",
+        "keywords": [
+          ""
+        ]
+      }
+    ]
+  }
+}
+
+
+3. Read about the difference between window, screen, and document in javascript
+
+=>Window
+Window is the execution context and global object for that context's JavaScript
+
+=>Document
+Document contains the DOM, initialized by parsing HTML.
+
+=>Screen
+Screen describes the physical display's full screen.
+
+4. Codekata practise
+
+CODEKATA
+
+=>I solved or completed 10 questions in Input/Output.
+=>I solved or completed 30 questions in Obsolute Beginner.
+=>I solved or completed 4 questions in Array.
+=>I solved or completed 5 questions in Mathematics.
+=>I solved or completed 2 questions in Strings.
+=>I solved or completed 16 questiona in Basics.
+=>I solved or completed 3 questions in Companies.
+=>I solved or completed 11 questions in Looping.
+=>I solved or completed 2 questions in Sorting.
+=>I solved or completed 2 questions in Data Structures.
+=>I solved or completed 1 question in bit Manipulation.
+
+//Submitted by Jagadeesh Kumar . S
