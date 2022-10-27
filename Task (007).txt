@@ -1,0 +1,266 @@
+//Submitted by Jagadeesh Kumar . S
+
+Day 06 :OOPS TASK
+
+=>Question.
+
+1. https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+
+=>Answer.
+
+class movie {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+}
+var movie1 = new movie("Vikram", "Raj Kamal", "4.5");
+console.log(movie1.title, movie1.studio, (movie1.rating = "5"));
+
+class movie2 {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+}
+var movie02 = new movie2("PS1", "Lyca", "5");
+console.log(movie02.title, movie02.studio, movie02.rating);
+
+class Movie3 {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+}
+
+=>Question.
+
+2. https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+
+=>Answer.
+
+class Circle {
+    constructor (radius = 1.0, color = "red" ){
+        this.radius = radius;
+        this.color = color;
+    }
+circleR(num1){
+   this.radius = num1;
+}
+circleRC(num2,col){
+    this.radius = num2;
+    this.color = col;
+}
+getRadius(){
+    return this.radius;
+}
+getcolor(){
+    return this.color;
+}
+setColor(colr){
+    this.color = colr;
+}
+getArea(){
+    let area = 3.14*this.radius*this.radius;
+    return area;
+}
+getCircumfer(){
+    let circum = 2*3.14*this.radius;
+    return circum;
+}
+}
+console.log(circle1.circleR(5));
+console.log(circle1.circleRC(6,"indica"));
+let circle1 = new Circle(2,3);
+console.log(circle1.getRadius());
+
+=>Question.
+
+3. Write a "person" class to hold all the details.
+
+=>Answer.
+
+class persondetail {
+  constructor(name, age, dob, gender, ph) {
+    this.name = name;
+    this.age = age;
+    this.dob = dob;
+    this.gender = gender;
+    this.ph = ph;
+  }
+}
+
+class person1detail extends persondetail {
+  constructor(name, age, dob, gender, ph) {
+    super(name, age, dob, gender, ph);
+  }
+  person1() {
+    console.log(this.name);
+    console.log(this.age);
+    console.log(this.dob);
+    console.log(this.gender);
+    console.log(this.ph);
+  }
+}
+
+const p1 = new person1detail("Dharanikumar K", "30", "04-06-1992", "Male", "9999999999");
+
+p1.person1();
+
+=>Question.
+
+4. write a class to calculate the uber price.
+
+=>Answer.
+
+// write a class to calculate the uber price.
+
+console.log("Uber Prie Calculation");
+class uber {
+  constructor(vehiclemodel, km) {
+    this.km = km;
+    this.vehiclemodel = vehiclemodel;
+  }
+}
+class uberprice extends uber {
+  constructor(vehiclemodel, km) {
+    super(vehiclemodel, km);
+  }
+  pricedetail() {
+    if (this.vehiclemodel === "SEDAN") {
+      if (this.km >= 50) {
+        console.log(`Vehicle Model ${this.vehiclemodel}`);
+        console.log(`kilometer  ${this.km}km`);
+        console.log(`price  ${this.km * 10}$`);
+      } else {
+        console.log(`Vehicle Model ${this.vehiclemodel}`);
+        console.log(`kilometer  ${this.km}km`);
+        console.log(`price  ${this.km * 13}$`);
+      }
+    } else {
+      if (this.vehiclemodel === "HATCH") {
+        if (this.km >= 50) {
+          console.log(`Vehicle Model ${this.vehiclemodel}`);
+          console.log(`kilometer  ${this.km}km`);
+          console.log(`price ${this.km * 7}$`);
+          return 0;
+        } else {
+          console.log(`Vehicle Model  ${this.vehiclemodel}`);
+          console.log(`kilometer  ${this.km}km`);
+          console.log(`price  ${this.km * 8}$`);
+          return 0;
+        }
+      } else {
+        if (this.vehiclemodel === "SUV") {
+          if (this.km >= 50) {
+            console.log(`Vehicle Model = ${this.vehiclemodel}`);
+            console.log(`kilometer =  ${this.km}km`);
+            console.log(`Price = ${this.km * 9}$`);
+          } else {
+            console.log(`Vehicle Model  ${this.vehiclemodel}`);
+            console.log(`Kilometer  ${this.km}km`);
+            console.log(`Price  ${this.km * 10}$`);
+            return 0;
+          }
+        }
+      }
+    }
+  }
+}
+const r = new uberprice("SUV", 20);
+r.pricedetail();
+
+
+Day 07:ARRAY METHODS
+
+=>Question.
+
+1.Solving problems using array functions on the rest countries' data.
+
+a.Get all the countries from the Asia continent /region using the Filter function
+
+b.Get all the countries with a population of less than 2 lakhs using Filter function
+
+c.Print the following details name, capital, flag using forEach function
+
+d.Print the total population of countries using reduce function
+
+e.Print the country which uses US Dollars as currency.
+
+=>Answer.
+
+//a.Get all the countries from the Asia continent /region using the Filter function
+
+var request =new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload=function(){
+    var result=JSON.parse(request.response);
+    console.log(result)
+    var Asiareg = result.filter((ele)=>ele.region=="Asia")
+    var result = Asiareg.map((ele)=>ele.name)
+    console.log(result)
+  
+}
+
+
+//b.Get all the countries with a population of less than 2 lakhs using Filter function
+
+var request =new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload=function(){
+    var result=JSON.parse(request.response);
+    console.log(result)
+    var population1 = result.filter((ele)=>ele.population<200000).map((ele)=>ele.name)
+    console.log(population1)
+}
+
+//c.Print the following details name, capital, flag using forEach function
+
+var request =new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload=function(){
+    var result=JSON.parse(request.response);
+    console.log(result)
+    var res=result.forEach(element => {console.log(`Countryname- ${element.name} Capital- ${element.capital} Flag- ${element.flag}`)
+        
+        
+    });
+    console.log(res)
+}
+
+//d.Print the total population of countries using reduce function
+
+var request =new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload=function(){
+    var result=JSON.parse(request.response);
+    console.log(result)
+    var res=result.reduce((acc,cv)=>acc+cv.population,0)
+    console.log(res)
+}
+
+//e.Print the country which uses US Dollars as currency.
+
+
+var request =new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload=function(){
+    var result=JSON.parse(request.response);
+    console.log(result)
+        for(i=0;i<result.length;i++){
+            if(result[i].currencies[0].code==="USD")
+            {
+                console.log("name:",result[i].name)
+            }
+        }
+    }
+	
+//Submitted by Jagadeesh Kumar. S
